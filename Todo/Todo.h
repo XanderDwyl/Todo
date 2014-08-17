@@ -10,10 +10,10 @@
 
 @interface Todo : NSObject
 
-    @property (nonatomic, assign) NSInteger uniqueId;
-    @property (nonatomic, copy) NSString *title;
-    @property (nonatomic, copy) NSDate *dateCreated;
-    @property (nonatomic, copy) NSDate *dateUpdated;
-    @property BOOL done;
+@property (nonatomic, assign) NSInteger uniqueId;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSDate *dateCreated;
+@property (nonatomic, copy) NSDate *dateUpdated;
+@property BOOL done;
 
 @end

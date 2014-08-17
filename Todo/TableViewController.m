@@ -93,12 +93,6 @@
     [formatter setDateFormat:@"MMM d, YYYY"];
     cell.detailTextLabel.text = [formatter stringFromDate:[todo dateCreated]];
     
-    // set custom bgColor for offset rows
-    if ([indexPath row]%2 == 0)
-    {
-        [cell.contentView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
-    }
-    
     // pimp cell
     [cell.detailTextLabel setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     [cell.textLabel setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];

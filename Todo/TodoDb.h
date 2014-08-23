@@ -17,5 +17,6 @@
 + (TodoDb *)database;
 - (NSArray *)todoDbInfos;
 - (BOOL)insertNewTodoWithTitle:(NSString *)title;
+- (BOOL)deleteTodoWithId:(int)id;
 
 @end

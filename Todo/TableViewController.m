@@ -36,7 +36,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     if (!_customSelectedTableCellView) {
         _customSelectedTableCellView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 640, 88)];
@@ -64,6 +64,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -81,21 +82,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"todocell" forIndexPath:indexPath];
+    TodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
     
     // Configure the cell...
     Todo *todo = [_todoList objectAtIndex:[indexPath row]];
     
-    cell.textLabel.text = [todo title];
+    cell.titleField.text = [todo title];
     
     // format date display
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM d, YYYY"];
-    cell.detailTextLabel.text = [formatter stringFromDate:[todo dateCreated]];
+    cell.dateField.text = [formatter stringFromDate:[todo dateCreated]];
     
     // pimp cell
-    [cell.detailTextLabel setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
-    [cell.textLabel setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    [cell.dateField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    [cell.titleField setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
     [cell setSelectedBackgroundView:_customSelectedTableCellView];
     
     return cell;
@@ -108,27 +109,30 @@
 
 
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Return NO if you do not want the specified item to be editable.
+//    return YES;
+//    
+//}
 
-
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        
-        [_todoList removeObjectAtIndex:[indexPath row]];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
+//// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Todo *myrow = [_todoList objectAtIndex:[indexPath row]];
+//
+//    if (editingStyle == UITableViewCellEditingStyleDelete && [[TodoDb database] deleteTodoWithId:(int)myrow.uniqueId]) {
+//        // Delete the row from the data source
+//        [_todoList removeObjectAtIndex:[indexPath row]];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    
+//    }
+//    
+//    if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        NSLog(@"This is edit!");
+//    }   
+//}
 
 
 /*

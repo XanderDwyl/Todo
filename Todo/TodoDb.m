@@ -124,4 +124,28 @@ static TodoDb *_database;
     
     sqlite3_close(_database);
     return result;
-}@end
+}
+
+- (BOOL)deleteTodoWithId:(int)id
+{
+    if (![self isDatabaseOpened]) {
+        return NO;
+    }
+    
+    BOOL result = YES;
+    
+    //  NSString *today = [[NSDate date] description];
+    
+    NSString *query = [NSString stringWithFormat:@"delete from todo where id = \"%d\"", id];
+    const char *qs = [query UTF8String];
+    char *errorMsg;
+    
+    if (sqlite3_exec(_database, qs, NULL, NULL, &errorMsg) != SQLITE_OK) {
+        result = NO;
+        NSLog(@"%s", errorMsg);
+    }
+    
+    sqlite3_close(_database);
+    return result;
+}
+@end

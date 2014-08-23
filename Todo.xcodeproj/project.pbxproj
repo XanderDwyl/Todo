@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F04A0B619A35C6E00D844F0 /* TodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F04A0B419A35C6E00D844F0 /* TodoTableViewCell.m */; };
 		6FE2E674199CC5020037267C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE2E673199CC5020037267C /* Foundation.framework */; };
 		6FE2E676199CC5020037267C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE2E675199CC5020037267C /* CoreGraphics.framework */; };
 		6FE2E678199CC5020037267C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE2E677199CC5020037267C /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F04A0B319A35C6E00D844F0 /* TodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoTableViewCell.h; sourceTree = "<group>"; };
+		6F04A0B419A35C6E00D844F0 /* TodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoTableViewCell.m; sourceTree = "<group>"; };
 		6FE2E670199CC5020037267C /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FE2E673199CC5020037267C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FE2E675199CC5020037267C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,8 @@
 				6FE2E6B2199CD54F0037267C /* TodoFormViewController.m */,
 				6FFFF872199E1239003DA865 /* TodoDb.h */,
 				6FFFF873199E1239003DA865 /* TodoDb.m */,
+				6F04A0B319A35C6E00D844F0 /* TodoTableViewCell.h */,
+				6F04A0B419A35C6E00D844F0 /* TodoTableViewCell.m */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F04A0B619A35C6E00D844F0 /* TodoTableViewCell.m in Sources */,
 				6FE2E684199CC5020037267C /* AppDelegate.m in Sources */,
 				6FE2E6AA199CC5DC0037267C /* TableViewController.m in Sources */,
 				6FE2E680199CC5020037267C /* main.m in Sources */,
